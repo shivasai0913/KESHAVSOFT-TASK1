@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1704067200000",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "password": "password123",
+    "phone": "+1234567890",
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "lastLogin": "2024-01-01T10:30:00.000Z"
+  },
+  {
+    "id": "1704153600000",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "email": "jane.smith@example.com",
+    "password": "securepass456",
+    "phone": "+1987654321",
+    "createdAt": "2024-01-02T00:00:00.000Z",
+    "lastLogin": "2024-01-02T14:15:00.000Z"
+  }
+]

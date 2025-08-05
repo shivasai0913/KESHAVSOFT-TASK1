@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - INFOSHELL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero-section {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9)), 
+                  url('https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/a406b998-0759-4637-adfb-014c28c3beca.png') no-repeat center center/cover;
+      color: white;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, rgba(0,0,0,0.1), rgba(255,255,255,0.1));
+      pointer-events: none;
+    }
+    
+    .hero-section .container {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .hero-section h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero-section .lead {
+      font-size: 1.4rem;
+      font-weight: 300;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    .card-img-top {
+      height: 120px;
+      width: 120px;
+      object-fit: contain;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    .card {
+      transition: all 0.3s ease;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    
+    .card-body {
+      padding: 2rem;
+    }
+    
+    .card-title {
+      color: #667eea;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    
+    .carousel-item {
+      min-height: 300px;
+      padding: 3rem 2rem;
+    }
+    
+    .blockquote {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: #2c3e50;
+    }
+    
+    .blockquote-footer {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 50px;
+      padding: 0.75rem 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary:hover {
+      background: linear-gradient(45deg, #764ba2, #667eea);
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .section-divider {
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 2px;
+      width: 100px;
+      margin: 0 auto 3rem;
+    }
+    
+    .testimonial-section {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      position: relative;
+    }
+    
+    .testimonial-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events: none;
+    }
+    
+    .stats-section {
+      background: linear-gradient(45deg, #667eea, #764ba2);
+      color: white;
+      padding: 4rem 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-section {
+        padding: 80px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="main.html" style="color: #667eea; font-size: 1.5rem;">INFOSHELL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="main.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+              <span id="userWelcome">Welcome, User!</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="#" id="profileLink">Profile</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#" id="logoutBtn">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced Hero Banner -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="animate__animated animate__fadeInUp">About INFOSHELL</h1>
+      <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+        Empowering innovation with responsive and intuitive web experiences that transform digital landscapes.
+      </p>
+      <p class="mb-4 animate__animated animate__fadeInUp animate__delay-2s" style="font-size: 1.1rem; opacity: 0.9;">
+        We craft digital solutions that bridge the gap between technology and human experience.
+      </p>
+      <a href="#about-content" class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-3s">
+        Discover Our Story
+      </a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Support Available</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced About Info Cards -->
+  <section class="py-5" id="about-content">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3" style="color: #2c3e50;">What Drives Us Forward</h2>
+        <hr class="section-divider">
+        <p class="lead text-muted">Our foundation is built on three core principles that guide every project we undertake.</p>
+      </div>
+      
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div class="card-body">
+              <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/2b5a998f-f281-4563-84fd-f871f925b3e0.png" 
+                   class="card-img-top p-4" alt="Our Purpose" />
+              <h4 class="card-title">Our Purpose</h4>
+              <p class="card-text">We focus on creating user-friendly, responsive websites using Bootstrap 5 and modern technologies to meet evolving design needs and exceed client expectations.</p>
+              <div class="mt-3">
+                <small class="text-muted">
+                  <i class="bi bi-target"></i> Goal-Oriented Solutions
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div class="card-body">
+              <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/30a89bb8-9298-4fc2-9efb-9e492e130080.png" 
+                   class="card-img-top p-4" alt="Our Approach" />
+              <h4 class="card-title">Our Approach</h4>
+              <p class="card-text">We combine clean coding practices with dynamic layouts and collaborative methodologies to deliver seamless user experiences that perform flawlessly across all devices.</p>
+              <div class="mt-3">
+                <small class="text-muted">
+                  <i class="bi bi-puzzle"></i> Collaborative Excellence
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm text-center h-100">
+            <div class="card-body">
+              <img src="https://user-gen-media-assets.s3.amazonaws.com/gpt4o_images/013b7bc5-cb38-4d68-bb43-6b837d3149c2.png" 
+                   class="card-img-top p-4" alt="Our Values" />
+              <h4 class="card-title">Our Values</h4>
+              <p class="card-text">Integrity, innovation, and collaboration are at the heart of everything we build and deliver. We believe in transparent communication and sustainable solutions.</p>
+              <div class="mt-3">
+                <small class="text-muted">
+                  <i class="bi bi-handshake"></i> Trust & Reliability
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enhanced Testimonials Section -->
+  <section class="testimonial-section py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-5 fw-bold mb-3" style="color: #2c3e50;">What Our Clients Say</h2>
+        <hr class="section-divider">
+        <p class="lead text-muted">Real feedback from real clients who've experienced the INFOSHELL difference.</p>
+      </div>
+      
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+        </div>
+        
+        <div class="carousel-inner text-center">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <blockquote class="blockquote">
+                    <p class="mb-4">"INFOSHELL delivered a beautiful website ahead of schedule. Their team is professional, detail-oriented, and truly understands modern web development. The responsive design works flawlessly across all our devices."</p>
+                    <footer class="blockquote-footer">
+                      <strong>Antony</strong>, CEO at <cite title="Company A">TechNova</cite>
+                      <div class="mt-2">
+                        <span class="text-warning">★★★★★</span>
+                      </div>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <blockquote class="blockquote">
+                    <p class="mb-4">"We loved the responsiveness and clean design. Perfect for our brand! The Bootstrap 5 implementation was seamless, and the site loads incredibly fast. Our user engagement has increased by 40% since launch."</p>
+                    <footer class="blockquote-footer">
+                      <strong>G Shiva Sai</strong>, Marketing Director at <cite title="Company B">EduSpark</cite>
+                      <div class="mt-2">
+                        <span class="text-warning">★★★★★</span>
+                      </div>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-8">
+                  <blockquote class="blockquote">
+                    <p class="mb-4">"Their UI/UX understanding is top-notch. Highly recommended for any startup looking to make a strong digital impression. The collaborative approach and attention to detail exceeded our expectations completely."</p>
+                    <footer class="blockquote-footer">
+                      <strong>Priya S.</strong>, Founder at <cite title="Company C">HealthHive</cite>
+                      <div class="mt-2">
+                        <span class="text-warning">★★★★★</span>
+                      </div>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" style="filter: invert(1);"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" style="filter: invert(1);"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="display-6 fw-bold mb-4" style="color: #2c3e50;">Ready to Start Your Project?</h2>
+          <p class="lead text-muted mb-4">
+            Let's collaborate to bring your vision to life with cutting-edge web solutions that deliver results.
+          </p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="contact.html" class="btn btn-primary btn-lg px-4">Get Started Today</a>
+            <a href="#" class="btn btn-outline-primary btn-lg px-4">View Our Portfolio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-md-start">
+          <p class="mb-0">&copy; 2025 INFOSHELL. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="social-links">
+            <a href="#" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white me-3"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-envelope"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="auth.js"></script>
+  <script src="scripts.js"></script>
+  
+  <!-- Add smooth scrolling and animation effects -->
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Add scroll-triggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe cards for animation
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(30px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(card);
+    });
+  </script>
+</body>
+</html>
